@@ -1,0 +1,105 @@
+.speaker-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.speaker-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--speaker-color);
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.speaker-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.speaker-card:hover::before {
+    opacity: 1;
+}
+
+.speaker-avatar-wrapper {
+    flex-shrink: 0;
+}
+
+.speaker-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--speaker-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.speaker-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.speaker-name {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.speaker-role {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+.speaker-org {
+    font-size: 0.85rem;
+    color: var(--speaker-color);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.speaker-talk {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed var(--color-border);
+}
+
+.talk-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+}
+
+.talk-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .speaker-card {
+        flex-direction: column;
+    }
+}
